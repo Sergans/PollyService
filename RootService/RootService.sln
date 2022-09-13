@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RootService", "RootService.csproj", "{EAC4B82F-04BF-487A-9D4E-049EFE299EC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RootService", "RootService.csproj", "{EAC4B82F-04BF-487A-9D4E-049EFE299EC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleService", "..\SampleService\SampleService.csproj", "{E639AD42-A026-44EA-AC6D-B186F73AB896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleService", "..\SampleService\SampleService.csproj", "{E639AD42-A026-44EA-AC6D-B186F73AB896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Http.Utils", "..\Net.Http.Utils\Net.Http.Utils.csproj", "{FFE99D9A-FC7A-4185-B0FB-8608084B61F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E639AD42-A026-44EA-AC6D-B186F73AB896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E639AD42-A026-44EA-AC6D-B186F73AB896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E639AD42-A026-44EA-AC6D-B186F73AB896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE99D9A-FC7A-4185-B0FB-8608084B61F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE99D9A-FC7A-4185-B0FB-8608084B61F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE99D9A-FC7A-4185-B0FB-8608084B61F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE99D9A-FC7A-4185-B0FB-8608084B61F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
