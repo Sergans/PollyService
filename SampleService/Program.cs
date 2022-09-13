@@ -29,6 +29,7 @@ namespace SampleService
             }).UseNLog(new NLogAspNetCoreOptions() { RemoveLoggerFactoryFilter = true });
             // Add services to the container.
             builder.Services.AddHttpClientLogging();
+            builder.Services.AddHttpClient("RootServiceClient");
             builder.Services.AddControllers();
            
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Http;
+using Net.Http.Utils.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +13,8 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddHttpClientLogging(this IServiceCollection services)
         {
-            //services.TryAddEnumerable(ServiceDescriptor.Singleton<IHttpMessageHandlerBuilderFilter,
-            //    HttpClientMessageHandlerBuilderFilter>());
+            services.TryAddEnumerable(ServiceDescriptor.Singleton<IHttpMessageHandlerBuilderFilter,
+                HttpClientMessageHandlerBuilderFilter>());
             return services;
         }
 

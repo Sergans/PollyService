@@ -26,4 +26,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Net.Http.Utils\Net.Http.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
