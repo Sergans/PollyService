@@ -25,7 +25,8 @@ namespace SampleService.Controllers
            // _logger.LogInformation("WeatherForecastController >>> START  GetWeatherForecast");
             RootServiceNamespace.RootServiceClient rootServiceClient =
                new RootServiceNamespace.RootServiceClient("http://localhost:5227/",new HttpClient());
-            return Ok(rootServiceClient.GetWeatherForecastAsync());
+            
+            return Ok(rootServiceClient.GetWeatherForecastAsync().Result);
             //var res = await _rootServiceClient.Get();
            // _logger.LogInformation("WeatherForecastController >>> END  GetWeatherForecast");
             //return Ok(res);
