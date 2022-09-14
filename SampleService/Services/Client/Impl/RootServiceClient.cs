@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
+using SampleService.Services.Client;
 
-namespace SampleService.Services.Impl
+namespace SampleService.Services.Client.Impl
 {
     public class RootServiceClient : IRootServiceClient
     {

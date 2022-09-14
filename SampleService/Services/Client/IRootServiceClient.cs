@@ -1,4 +1,4 @@
-﻿namespace SampleService.Services
+﻿namespace SampleService.Services.Client
 {
     public interface IRootServiceClient
     {

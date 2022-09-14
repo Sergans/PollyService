@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.HttpLogging;
 using NLog.Web;
+using Polly;
 using RootServiceNamespace;
 using SampleService.Services;
 
@@ -29,7 +30,19 @@ namespace SampleService
             }).UseNLog(new NLogAspNetCoreOptions() { RemoveLoggerFactoryFilter = true });
             // Add services to the container.
             builder.Services.AddHttpClientLogging();
-            builder.Services.AddHttpClient("RootServiceClient");
+            //builder.Services.AddHttpClient("RootServiceClient");
+            builder.Services
+               .AddHttpClient<Services.Client.IRootServiceClient, Services.Client.Impl.RootServiceClient>("RootServiceClient")
+               .AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(retryCount: 3,
+               sleepDurationProvider: (attemptCount) => TimeSpan.FromSeconds(attemptCount * 2),
+               onRetry: (response, sleepDuration, attemptNumber, context) =>
+               {
+                   var logger = builder.Services.BuildServiceProvider().GetService<ILogger<Program>>();
+
+                   logger.LogError(response.Exception != null ? response.Exception :
+                       new Exception($"\n{response.Result.StatusCode}: {response.Result.RequestMessage}"), $"(attempt: {attemptNumber} ) RootServiceClient request exception.");
+               }));
+
             builder.Services.AddControllers();
            
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
